@@ -1,0 +1,226 @@
+##UC1
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| payroll_service    |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.38 sec)
+
+mysql> create database addressbook;
+Query OK, 1 row affected (0.34 sec)
+
+mysql> use addressbook;
+Database changed
+
+
+##UC2
+
+mysql> create table addressbook_info(id   INT unsigned NOT NULL AUTO_INCREMENT,First_Name VARCHAR(250) NOT NULL,Last_Name VARCHAR(250) NOT NULL,Address VARCHAR(250),City VARCHAR(250),State VARCHAR(250),Phone_Number INT,Zip INT,Email_Id VARCHAR(250),PRIMARY KEY (id));
+Query OK, 0 rows affected (2.36 sec)
+
+mysql> describe addressbook_info;
++--------------+--------------+------+-----+---------+----------------+
+| Field        | Type         | Null | Key | Default | Extra          |
++--------------+--------------+------+-----+---------+----------------+
+| id           | int unsigned | NO   | PRI | NULL    | auto_increment |
+| First_Name   | varchar(250) | NO   |     | NULL    |                |
+| Last_Name    | varchar(250) | NO   |     | NULL    |                |
+| Address      | varchar(250) | YES  |     | NULL    |                |
+| City         | varchar(250) | YES  |     | NULL    |                |
+| State        | varchar(250) | YES  |     | NULL    |                |
+| Phone_Number | int          | YES  |     | NULL    |                |
+| Zip          | int          | YES  |     | NULL    |                |
+| Email_Id     | varchar(250) | YES  |     | NULL    |                |
++--------------+--------------+------+-----+---------+----------------+
+9 rows in set (0.07 sec)
+
+##UC3
+
+mysql> INSERT INTO addressbook_info (First_Name,Last_Name,Address,City,State,Phone_Number,Zip,Email_id)VALUES('Amal','Raj','Akkottuchalil','Kozhikkode','Kerala',90480318,673602,'acamalraj@gmail.com');
+Query OK, 1 row affected (0.10 sec)
+
+mysql> select * from addressbook_info;
++----+------------+-----------+---------------+------------+--------+--------------+--------+---------------------+
+| id | First_Name | Last_Name | Address       | City       | State  | Phone_Number | Zip    | Email_Id            |
++----+------------+-----------+---------------+------------+--------+--------------+--------+---------------------+
+|  1 | Amal       | Raj       | Akkottuchalil | Kozhikkode | Kerala |     90480318 | 673602 | acamalraj@gmail.com |
++----+------------+-----------+---------------+------------+--------+--------------+--------+---------------------+
+1 row in set (0.02 sec)
+
+##UC4
+
+mysql> UPDATE addressbook_info set First_Name='Anagha' WHERE First_Name='Amal';
+Query OK, 1 row affected (0.13 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from addressbook_info;
++----+------------+-----------+---------------+------------+--------+--------------+--------+---------------------+
+| id | First_Name | Last_Name | Address       | City       | State  | Phone_Number | Zip    | Email_Id            |
++----+------------+-----------+---------------+------------+--------+--------------+--------+---------------------+
+|  1 | Anagha     | Raj       | Akkottuchalil | Kozhikkode | Kerala |     90480318 | 673602 | acamalraj@gmail.com |
++----+------------+-----------+---------------+------------+--------+--------------+--------+---------------------+
+1 row in set (0.00 sec)
+
+##UC5
+
+mysql> DELETE FROM addressbook_info WHERE First_Name='Anagha';
+Query OK, 1 row affected (0.20 sec)
+
+mysql> select * from addressbook_info;
+Empty set (0.01 sec)
+
+##UC6
+
+mysql> INSERT INTO addressbook_info (First_Name,Last_Name,Address,City,State,Phone_Number,Zip,Email_id)VALUES('Amal','Raj','Akkottuchalil','Kozhikkode','Kerala',90480318,673602,'acamalraj@gmail.com');
+Query OK, 1 row affected (0.11 sec)
+
+mysql> INSERT INTO addressbook_info (First_Name,Last_Name,Address,City,State,Phone_Number,Zip,Email_id)VALUES('Anagha','Raj','Akkottuchalil','Kozhikkode','Kerala',90480318,673602,'anagha@gmail.com');
+Query OK, 1 row affected (0.14 sec)
+
+mysql> INSERT INTO addressbook_info (First_Name,Last_Name,Address,City,State,Phone_Number,Zip,Email_id)VALUES('Baby','Selvaraj','Akkottuchalil','Kozhikkode','Kerala',90480318,673602,'baby@gmail.com');
+Query OK, 1 row affected (0.08 sec)
+
+mysql> INSERT INTO addressbook_info (First_Name,Last_Name,Address,City,State,Phone_Number,Zip,Email_id)VALUES('Selvaraj','','Akkottuchalil','Kozhikkode','Kerala',90480318,673602,'selvan@gmail.com');
+Query OK, 1 row affected (0.18 sec)
+
+mysql> INSERT INTO addressbook_info (First_Name,Last_Name,Address,City,State,Phone_Number,Zip,Email_id)VALUES('Amal','Raj','Akkottuchalil','Malappuram','Kerala',90480318,673602,'acamalraj@gmail.com');
+Query OK, 1 row affected (0.10 sec)
+
+mysql> INSERT INTO addressbook_info (First_Name,Last_Name,Address,City,State,Phone_Number,Zip,Email_id)VALUES('Amal','Raj','Akkottuchalil','Malappuram','UP',90480318,673602,'acamalraj@gmail.com');
+Query OK, 1 row affected (0.12 sec)
+
+mysql> select * from addressbook_info;
++----+------------+-----------+---------------+------------+--------+--------------+--------+---------------------+
+| id | First_Name | Last_Name | Address       | City       | State  | Phone_Number | Zip    | Email_Id            |
++----+------------+-----------+---------------+------------+--------+--------------+--------+---------------------+
+|  2 | Amal       | Raj       | Akkottuchalil | Kozhikkode | Kerala |     90480318 | 673602 | acamalraj@gmail.com |
+|  3 | Anagha     | Raj       | Akkottuchalil | Kozhikkode | Kerala |     90480318 | 673602 | anagha@gmail.com    |
+|  4 | Baby       | Selvaraj  | Akkottuchalil | Kozhikkode | Kerala |     90480318 | 673602 | baby@gmail.com      |
+|  5 | Selvaraj   |           | Akkottuchalil | Kozhikkode | Kerala |     90480318 | 673602 | selvan@gmail.com    |
+|  6 | Amal       | Raj       | Akkottuchalil | Malappuram | Kerala |     90480318 | 673602 | acamalraj@gmail.com |
+|  7 | Amal       | Raj       | Akkottuchalil | Malappuram | UP     |     90480318 | 673602 | acamalraj@gmail.com |
++----+------------+-----------+---------------+------------+--------+--------------+--------+---------------------+
+6 rows in set (0.00 sec)
+
+mysql> select * from addressbook_info where city='Malappuram' or State='UP';
++----+------------+-----------+---------------+------------+--------+--------------+--------+---------------------+
+| id | First_Name | Last_Name | Address       | City       | State  | Phone_Number | Zip    | Email_Id            |
++----+------------+-----------+---------------+------------+--------+--------------+--------+---------------------+
+|  6 | Amal       | Raj       | Akkottuchalil | Malappuram | Kerala |     90480318 | 673602 | acamalraj@gmail.com |
+|  7 | Amal       | Raj       | Akkottuchalil | Malappuram | UP     |     90480318 | 673602 | acamalraj@gmail.com |
++----+------------+-----------+---------------+------------+--------+--------------+--------+---------------------+
+2 rows in set (0.00 sec)
+
+
+##UC7
+
+mysql> select City,COUNT(City) from addressbook_info where City='Kozhikkode';
++------------+-------------+
+| City       | COUNT(City) |
++------------+-------------+
+| Kozhikkode |           4 |
++------------+-------------+
+1 row in set (0.00 sec)
+
+mysql> select State,COUNT(City) from addressbook_info where State='Kerala';
++--------+-------------+
+| State  | COUNT(City) |
++--------+-------------+
+| Kerala |           5 |
++--------+-------------+
+1 row in set (0.00 sec)
+
+##UC8
+
+mysql> select * from addressbook_info ORDER BY First_Name;
++----+------------+-----------+---------------+------------+--------+--------------+--------+---------------------+
+| id | First_Name | Last_Name | Address       | City       | State  | Phone_Number | Zip    | Email_Id            |
++----+------------+-----------+---------------+------------+--------+--------------+--------+---------------------+
+|  2 | Amal       | Raj       | Akkottuchalil | Kozhikkode | Kerala |     90480318 | 673602 | acamalraj@gmail.com |
+|  6 | Amal       | Raj       | Akkottuchalil | Malappuram | Kerala |     90480318 | 673602 | acamalraj@gmail.com |
+|  7 | Amal       | Raj       | Akkottuchalil | Malappuram | UP     |     90480318 | 673602 | acamalraj@gmail.com |
+|  3 | Anagha     | Raj       | Akkottuchalil | Kozhikkode | Kerala |     90480318 | 673602 | anagha@gmail.com    |
+|  4 | Baby       | Selvaraj  | Akkottuchalil | Kozhikkode | Kerala |     90480318 | 673602 | baby@gmail.com      |
+|  5 | Selvaraj   |           | Akkottuchalil | Kozhikkode | Kerala |     90480318 | 673602 | selvan@gmail.com    |
++----+------------+-----------+---------------+------------+--------+--------------+--------+---------------------+
+6 rows in set (0.02 sec)
+
+##UC9
+
+mysql> ALTER TABLE addressbook_info ADD Addressbook_Name VARCHAR(250) NOT NULL AFTER id;
+Query OK, 0 rows affected (3.74 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE addressbook_info ADD Type VARCHAR(250) NOT NULL AFTER Addressbook_Name;
+Query OK, 0 rows affected (1.65 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from addressbook_info ORDER BY First_Name;
++----+------------------+------+------------+-----------+---------------+------------+--------+--------------+--------+---------------------+
+| id | Addressbook_Name | Type | First_Name | Last_Name | Address       | City       | State  | Phone_Number | Zip    | Email_Id            |
++----+------------------+------+------------+-----------+---------------+------------+--------+--------------+--------+---------------------+
+|  2 |                  |      | Amal       | Raj       | Akkottuchalil | Kozhikkode | Kerala |     90480318 | 673602 | acamalraj@gmail.com |
+|  6 |                  |      | Amal       | Raj       | Akkottuchalil | Malappuram | Kerala |     90480318 | 673602 | acamalraj@gmail.com |
+|  7 |                  |      | Amal       | Raj       | Akkottuchalil | Malappuram | UP     |     90480318 | 673602 | acamalraj@gmail.com |
+|  3 |                  |      | Anagha     | Raj       | Akkottuchalil | Kozhikkode | Kerala |     90480318 | 673602 | anagha@gmail.com    |
+|  4 |                  |      | Baby       | Selvaraj  | Akkottuchalil | Kozhikkode | Kerala |     90480318 | 673602 | baby@gmail.com      |
+|  5 |                  |      | Selvaraj   |           | Akkottuchalil | Kozhikkode | Kerala |     90480318 | 673602 | selvan@gmail.com    |
++----+------------------+------+------------+-----------+---------------+------------+--------+--------------+--------+---------------------+
+6 rows in set (0.00 sec)
+
+##UC10
+
+mysql> select Type,COUNT(Type) from addressbook_info where Type='Family';
++--------+-------------+
+| Type   | COUNT(Type) |
++--------+-------------+
+| Family |           1 |
++--------+-------------+
+1 row in set (0.02 sec)
+
+
+##UC11
+
+mysql> INSERT INTO addressbook_info (Addressbook_Name,Type,First_Name,Last_Name,Address,City,State,Phone_Number,Zip,Email_id)VALUES('Personal','Family','Amal','Raj','Akkottuchalil','Malappuram','UP',90480318,673602,'acamalraj@gmail.com');
+Query OK, 1 row affected (0.12 sec)
+
+mysql> select * from addressbook_info;
++----+------------------+--------+------------+-----------+---------------+------------+-------+--------------+--------+---------------------+
+| id | Addressbook_Name | Type   | First_Name | Last_Name | Address       | City       | State | Phone_Number | Zip    | Email_Id            |
++----+------------------+--------+------------+-----------+---------------+------------+-------+--------------+--------+---------------------+
+|  8 | Personal         | Family | Amal       | Raj       | Akkottuchalil | Malappuram | UP    |     90480318 | 673602 | acamalraj@gmail.com |
++----+------------------+--------+------------+-----------+---------------+------------+-------+--------------+--------+---------------------+
+1 row in set (0.02 sec)
+
+mysql> INSERT INTO addressbook_info (Addressbook_Name,Type,First_Name,Last_Name,Address,City,State,Phone_Number,Zip,Email_id)VALUES('Personal','Friends','Anagha','Raj','Akkottuchalil','Malappuram','UP',90480318,673602,'acamalraj@gmail.com');
+Query OK, 1 row affected (0.12 sec)
+
+mysql> select * from addressbook_info;
++----+------------------+---------+------------+-----------+---------------+------------+-------+--------------+--------+---------------------+
+| id | Addressbook_Name | Type    | First_Name | Last_Name | Address       | City       | State | Phone_Number | Zip    | Email_Id            |
++----+------------------+---------+------------+-----------+---------------+------------+-------+--------------+--------+---------------------+
+|  8 | Personal         | Family  | Amal       | Raj       | Akkottuchalil | Malappuram | UP    |     90480318 | 673602 | acamalraj@gmail.com |
+|  9 | Personal         | Friends | Anagha     | Raj       | Akkottuchalil | Malappuram | UP    |     90480318 | 673602 | acamalraj@gmail.com |
++----+------------------+---------+------------+-----------+---------------+------------+-------+--------------+--------+---------------------+
+2 rows in set (0.00 sec)
+
+mysql> INSERT INTO addressbook_info (Addressbook_Name,Type,First_Name,Last_Name,Address,City,State,Phone_Number,Zip,Email_id)VALUES('Personal','Family','Anagha','Raj','Akkottuchalil','Malappuram','UP',90480318,673602,'acamalraj@gmail.com');
+Query OK, 1 row affected (0.14 sec)
+
+mysql> select *from addressbook_info;
++----+------------------+---------+------------+-----------+---------------+------------+-------+--------------+--------+---------------------+
+| id | Addressbook_Name | Type    | First_Name | Last_Name | Address       | City       | State | Phone_Number | Zip    | Email_Id            |
++----+------------------+---------+------------+-----------+---------------+------------+-------+--------------+--------+---------------------+
+|  8 | Personal         | Family  | Amal       | Raj       | Akkottuchalil | Malappuram | UP    |     90480318 | 673602 | acamalraj@gmail.com |
+|  9 | Personal         | Friends | Anagha     | Raj       | Akkottuchalil | Malappuram | UP    |     90480318 | 673602 | acamalraj@gmail.com |
+| 10 | Personal         | Family  | Anagha     | Raj       | Akkottuchalil | Malappuram | UP    |     90480318 | 673602 | acamalraj@gmail.com |
++----+------------------+---------+------------+-----------+---------------+------------+-------+--------------+--------+---------------------+
+3 rows in set (0.04 sec)
+
+##UC12
