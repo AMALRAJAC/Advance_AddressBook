@@ -19,26 +19,7 @@ mysql> use addressbook;
 Database changed
 
 
-##UC2
 
-mysql> create table addressbook_info(id   INT unsigned NOT NULL AUTO_INCREMENT,First_Name VARCHAR(250) NOT NULL,Last_Name VARCHAR(250) NOT NULL,Address VARCHAR(250),City VARCHAR(250),State VARCHAR(250),Phone_Number INT,Zip INT,Email_Id VARCHAR(250),PRIMARY KEY (id));
-Query OK, 0 rows affected (2.36 sec)
-
-mysql> describe addressbook_info;
-+--------------+--------------+------+-----+---------+----------------+
-| Field        | Type         | Null | Key | Default | Extra          |
-+--------------+--------------+------+-----+---------+----------------+
-| id           | int unsigned | NO   | PRI | NULL    | auto_increment |
-| First_Name   | varchar(250) | NO   |     | NULL    |                |
-| Last_Name    | varchar(250) | NO   |     | NULL    |                |
-| Address      | varchar(250) | YES  |     | NULL    |                |
-| City         | varchar(250) | YES  |     | NULL    |                |
-| State        | varchar(250) | YES  |     | NULL    |                |
-| Phone_Number | int          | YES  |     | NULL    |                |
-| Zip          | int          | YES  |     | NULL    |                |
-| Email_Id     | varchar(250) | YES  |     | NULL    |                |
-+--------------+--------------+------+-----+---------+----------------+
-9 rows in set (0.07 sec)
 
 
 
