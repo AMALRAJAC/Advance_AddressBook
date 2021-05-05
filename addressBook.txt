@@ -118,24 +118,6 @@ mysql> select * from addressbook_info where city='Malappuram' or State='UP';
 2 rows in set (0.00 sec)
 
 
-##UC7
-
-mysql> select City,COUNT(City) from addressbook_info where City='Kozhikkode';
-+------------+-------------+
-| City       | COUNT(City) |
-+------------+-------------+
-| Kozhikkode |           4 |
-+------------+-------------+
-1 row in set (0.00 sec)
-
-mysql> select State,COUNT(City) from addressbook_info where State='Kerala';
-+--------+-------------+
-| State  | COUNT(City) |
-+--------+-------------+
-| Kerala |           5 |
-+--------+-------------+
-1 row in set (0.00 sec)
-
 
 
 
