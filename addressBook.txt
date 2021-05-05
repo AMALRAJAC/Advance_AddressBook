@@ -174,13 +174,4 @@ mysql> select * from addressbook_info ORDER BY First_Name;
 +----+------------------+------+------------+-----------+---------------+------------+--------+--------------+--------+---------------------+
 6 rows in set (0.00 sec)
 
-##UC10
-
-mysql> select Type,COUNT(Type) from addressbook_info where Type='Family';
-+--------+-------------+
-| Type   | COUNT(Type) |
-+--------+-------------+
-| Family |           1 |
-+--------+-------------+
-1 row in set (0.02 sec)
 
