@@ -151,27 +151,4 @@ mysql> select * from addressbook_info ORDER BY First_Name;
 +----+------------+-----------+---------------+------------+--------+--------------+--------+---------------------+
 6 rows in set (0.02 sec)
 
-##UC9
-
-mysql> ALTER TABLE addressbook_info ADD Addressbook_Name VARCHAR(250) NOT NULL AFTER id;
-Query OK, 0 rows affected (3.74 sec)
-Records: 0  Duplicates: 0  Warnings: 0
-
-mysql> ALTER TABLE addressbook_info ADD Type VARCHAR(250) NOT NULL AFTER Addressbook_Name;
-Query OK, 0 rows affected (1.65 sec)
-Records: 0  Duplicates: 0  Warnings: 0
-
-mysql> select * from addressbook_info ORDER BY First_Name;
-+----+------------------+------+------------+-----------+---------------+------------+--------+--------------+--------+---------------------+
-| id | Addressbook_Name | Type | First_Name | Last_Name | Address       | City       | State  | Phone_Number | Zip    | Email_Id            |
-+----+------------------+------+------------+-----------+---------------+------------+--------+--------------+--------+---------------------+
-|  2 |                  |      | Amal       | Raj       | Akkottuchalil | Kozhikkode | Kerala |     90480318 | 673602 | acamalraj@gmail.com |
-|  6 |                  |      | Amal       | Raj       | Akkottuchalil | Malappuram | Kerala |     90480318 | 673602 | acamalraj@gmail.com |
-|  7 |                  |      | Amal       | Raj       | Akkottuchalil | Malappuram | UP     |     90480318 | 673602 | acamalraj@gmail.com |
-|  3 |                  |      | Anagha     | Raj       | Akkottuchalil | Kozhikkode | Kerala |     90480318 | 673602 | anagha@gmail.com    |
-|  4 |                  |      | Baby       | Selvaraj  | Akkottuchalil | Kozhikkode | Kerala |     90480318 | 673602 | baby@gmail.com      |
-|  5 |                  |      | Selvaraj   |           | Akkottuchalil | Kozhikkode | Kerala |     90480318 | 673602 | selvan@gmail.com    |
-+----+------------------+------+------------+-----------+---------------+------------+--------+--------------+--------+---------------------+
-6 rows in set (0.00 sec)
-
 
