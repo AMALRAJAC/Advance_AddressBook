@@ -40,18 +40,8 @@ mysql> describe addressbook_info;
 +--------------+--------------+------+-----+---------+----------------+
 9 rows in set (0.07 sec)
 
-##UC3
 
-mysql> INSERT INTO addressbook_info (First_Name,Last_Name,Address,City,State,Phone_Number,Zip,Email_id)VALUES('Amal','Raj','Akkottuchalil','Kozhikkode','Kerala',90480318,673602,'acamalraj@gmail.com');
-Query OK, 1 row affected (0.10 sec)
 
-mysql> select * from addressbook_info;
-+----+------------+-----------+---------------+------------+--------+--------------+--------+---------------------+
-| id | First_Name | Last_Name | Address       | City       | State  | Phone_Number | Zip    | Email_Id            |
-+----+------------+-----------+---------------+------------+--------+--------------+--------+---------------------+
-|  1 | Amal       | Raj       | Akkottuchalil | Kozhikkode | Kerala |     90480318 | 673602 | acamalraj@gmail.com |
-+----+------------+-----------+---------------+------------+--------+--------------+--------+---------------------+
-1 row in set (0.02 sec)
 
 
 
