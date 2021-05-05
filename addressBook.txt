@@ -53,19 +53,7 @@ mysql> select * from addressbook_info;
 +----+------------+-----------+---------------+------------+--------+--------------+--------+---------------------+
 1 row in set (0.02 sec)
 
-##UC4
 
-mysql> UPDATE addressbook_info set First_Name='Anagha' WHERE First_Name='Amal';
-Query OK, 1 row affected (0.13 sec)
-Rows matched: 1  Changed: 1  Warnings: 0
-
-mysql> select * from addressbook_info;
-+----+------------+-----------+---------------+------------+--------+--------------+--------+---------------------+
-| id | First_Name | Last_Name | Address       | City       | State  | Phone_Number | Zip    | Email_Id            |
-+----+------------+-----------+---------------+------------+--------+--------------+--------+---------------------+
-|  1 | Anagha     | Raj       | Akkottuchalil | Kozhikkode | Kerala |     90480318 | 673602 | acamalraj@gmail.com |
-+----+------------+-----------+---------------+------------+--------+--------------+--------+---------------------+
-1 row in set (0.00 sec)
 
 
 
